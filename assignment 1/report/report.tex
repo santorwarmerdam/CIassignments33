@@ -1,0 +1,120 @@
+\documentclass[a4paper,oneside, 10pt]{book}
+\usepackage{listings}        	% Used to include VHDL-code and fragments
+\usepackage[english]{babel}		% 
+\usepackage[T1]{fontenc}		% Nicer font-encoding
+\usepackage{hyperref}			% Gives clickable references in pdf-file
+\usepackage{graphicx}			% Used to include .pdf, .jpg and .png-files
+\usepackage{tabularx}			% Used for evenly spread tables
+\usepackage{eso-pic}			% Absolute positioning, used for lines-to-track appendix and front- and backpage
+\usepackage{datetime}			% Used for some data-references
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=up]{caption}	% Nicer captions
+\usepackage{nonfloat}			% Captions for non-floating figures and tables
+\usepackage{nextpage}			% Advanced nextpage commands
+\usepackage{keystroke}			% "real" keys
+\usepackage[nottoc]{tocbibind}	% Include Bibliography in ToC
+\usepackage{multirow}			% Span text over multiple rows
+\usepackage{verbatim}			% For comment-environment
+\usepackage{float}				% Voor exacte plaatsing plaatjes
+\usepackage[section]{placeins}    %zonder chapter en subsection
+\usepackage{subcaption}         %Voor het gebruiken van subfigures
+\usepackage{report}             % Macro's for this manual
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage[absolute]{textpos}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{comment}
+\usepackage{etoolbox}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+% Settings for title, author etc (handleiding-package)
+\authorA{Rob Roggekamp}
+\authorB{Marc Zwart}
+\authorC{Santor Warmerdam}
+\authorD{???????}
+\authorE{???????}
+\authorF{4240502}
+
+\title{A Robot to Do Your Groceries}
+\subtitleA{Assignment 1: Artificial Neural Network}
+\subtitleB{Computational Intelligence}
+\subtitleC{}
+\vakcode{TI2736-A}
+\group{33}
+\version{V1.0 (\today)}
+\downloadlocation{Blackboard}
+
+% Settings for hyperref-package
+\hypersetup{colorlinks	= false,
+		    pdfborder	= 0 0 0,
+		    pdfauthor	= {\printauthorA, \printauthorB},
+		    pdftitle	= {\printtitle\ - \printsubtitleA}}
+
+% Settings for listings-package
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+% Settings for the tikz-package (tekstknipsels)
+\usetikzlibrary{decorations.pathmorphing}
+\definecolor{paper}{RGB}{241,241,212}
+\tikzstyle{perkament} = [pencildraw,draw,fill=paper,text width=.6*\paperwidth,inner xsep=10mm,inner ysep=1mm]
+
+% Misc.
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+\vspace*{-50 pt}
+{\setlength{\parindent}{0pt} \raggedright \normalfont
+\bfseries\huge
+\ifnum \value{secnumdepth}>1 
+   \if@mainmatter\thechapter.\ \fi
+\fi
+#1\par\nobreak\vspace{10 pt}}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setlength{\textwidth}{15cm}
+
+\begin{document}
+	\newcounter{tempcounter}	% For temporarily breaking enumerate-environments
+	\pagestyle{empty}		% To prevent pagenumber on backside of titlepage
+    \setlength{\hoffset}{-1.5cm}
+	\input{frontpage}
+    \setlength{\hoffset}{0cm}
+%	\input{colofon}
+
+	\mainmatter
+		%Add input files here:	
+	    \input{main}
+
+
+        
+\end{document}     

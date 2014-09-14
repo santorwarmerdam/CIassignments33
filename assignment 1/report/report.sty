@@ -1,0 +1,48 @@
+\ProvidesPackage{report}
+
+\RequirePackage{ifthen}    			% For the environments
+\RequirePackage{calc}				% For the environments
+\RequirePackage{array}				% For the tabalar option "m", used in the environments
+\RequirePackage{graphicx}			% For inclusion of the images in the environments
+\RequirePackage{xcolor}				% For the gray color of the environments
+
+
+%
+% Commands for general settings:
+%
+
+% The set-commands
+\newcommand{\subtitleA}[1]{\def\@subtitleA{#1}}
+\newcommand{\subtitleB}[1]{\def\@subtitleB{#1}}
+\newcommand{\subtitleC}[1]{\def\@subtitleC{#1}}
+\newcommand{\authorA}[1]{\def\@authorA{#1}}
+\newcommand{\authorB}[1]{\def\@authorB{#1}}
+\newcommand{\authorC}[1]{\def\@authorC{#1}}
+\newcommand{\authorD}[1]{\def\@authorD{#1}}
+\newcommand{\authorE}[1]{\def\@authorE{#1}}
+\newcommand{\authorF}[1]{\def\@authorF{#1}}
+\newcommand{\authorG}[1]{\def\@authorG{#1}}
+\newcommand{\authorH}[1]{\def\@authorH{#1}}
+\newcommand{\vakcode}[1]{\def\@vakcode{#1}}
+\newcommand{\group}[1]{\def\@group{#1}}
+\newcommand{\version}[1]{\def\@version{#1}}
+\newcommand{\downloadlocation}[1]{\def\@downloadlocation{#1}}
+
+% The print-commands
+\newcommand{\printauthorA}{\@authorA}
+\newcommand{\printauthorB}{\@authorB}
+\newcommand{\printauthorC}{\@authorC}
+\newcommand{\printauthorD}{\@authorD}
+\newcommand{\printauthorE}{\@authorE}
+\newcommand{\printauthorF}{\@authorF}
+\newcommand{\printauthorG}{\@authorG}
+\newcommand{\printauthorH}{\@authorH}
+\newcommand{\printtitle}{\@title}
+\newcommand{\printsubtitleA}{\@subtitleA}
+\newcommand{\printsubtitleB}{\@subtitleB}
+\newcommand{\printsubtitleC}{\@subtitleC}
+\newcommand{\printversion}{\@version}
+\newcommand{\printvakcode}{\@vakcode}
+\newcommand{\printgroup}{\@group}
+\newcommand{\printdownloadlocation}{\@downloadlocation}
+
