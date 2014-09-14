@@ -10,52 +10,52 @@
     We will want our model to be non-linear, because we can't assume anything about the shape of the solution space. So the likely candidate is the logistic function. Another possibility is using tanh, which could be tested if the logistic function is found to not provide a good enough performance.
     \item[Give a schematic diagram of your complete network]
     \end{description}
+	
     \tikzset{%
   every neuron/.style={
     circle,
     draw,
-    minimum size=1cm
+    minimum size=0.8cm
   },
-  neuron missing/.style={
+  neuron dots/.style={
     draw=none, 
-    scale=4,
+    scale=2,
     text height=0.333cm,
     execute at begin node=\color{black}$\vdots$
   },
 }
 
-\begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
-
-\foreach \m/\l [count=\y] in {1,2,3,missing,4}
+\begin{tikzpicture}
+\foreach \m [count=\y] in {1,2,3,dots,4}
   \node [every neuron/.try, neuron \m/.try] (input-\m) at (0,2.5-\y) {};
 
-\foreach \m [count=\y] in {1,missing,2}
+\foreach \m [count=\y] in {1,dots,2}
   \node [every neuron/.try, neuron \m/.try ] (hidden-\m) at (2,2-\y*1.25) {};
 
-\foreach \m [count=\y] in {1,missing,2}
+\foreach \m [count=\y] in {1,dots,2}
   \node [every neuron/.try, neuron \m/.try ] (output-\m) at (4,1.5-\y) {};
 
 \foreach \l [count=\i] in {1,2,3,10}
   \draw [<-] (input-\i) -- ++(-1,0)
-    node [above, midway] {$I_{\l}$};
+    node [above] {$I_{\l}$};
 
 \foreach \l [count=\i] in {1,8}
   \node [above] at (hidden-\i.north) {$H_{\l}$};
 
 \foreach \l [count=\i] in {1,7}
   \draw [->] (output-\i) -- ++(1,0)
-    node [above, midway] {$O_{\l}$};
+    node [above] {$O_{\l}$};
 
-\foreach \i in {1,...,4}
-  \foreach \j in {1,...,2}
+\foreach \i in {1,2,3,4}
+  \foreach \j in {1,2}
     \draw [->] (input-\i) -- (hidden-\j);
 
-\foreach \i in {1,...,2}
-  \foreach \j in {1,...,2}
+\foreach \i in {1,2}
+  \foreach \j in {1,2}
     \draw [->] (hidden-\i) -- (output-\j);
 
 \foreach \l [count=\x from 0] in {Input, Hidden, Ouput}
-  \node [align=center, above] at (\x*2,2) {\l \\ layer};
+  \node [align=center, above] at (\x*2,2) {\l};
 
 \end{tikzpicture}
 
