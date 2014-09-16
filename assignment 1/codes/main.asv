@@ -1,6 +1,6 @@
 clear all;
 load('C:\Users\Santor\Desktop\TI schakel minor\TI2735-A Computational Intelligence\practicum\assignment 1\data\rawdata.mat');
-numtries=1;
+numtries=20;
 %Parameters to be varied and tested:
 testsize=1000;%Size of validation set
 validationsize=1000;%Size of test set
@@ -8,7 +8,7 @@ inputneurons=10;
 outputneurons=7;
 hiddenneurons=25;%Test how changing this affects error
 learningrate=0.1;%Test how changing this affects error over time
-maxepochs=80;%Number of epochs for training, to be replaced by checking sum square error against determined value
+maxepochs=30;%Number of epochs for training, to be replaced by checking sum square error against determined value
 momentum=0;%amount of momentum 0.95 standard if used, 0 if you don't want to use momentum
 acceleration=1;%Learning rate change if going downhill 1.05 standard, 1 if you don't want to use acceleration
 deceleration=1;%learning rate change if not going downhill 0.7 standard,1 if you don't want to use deceleration
